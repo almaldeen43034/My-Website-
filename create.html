@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء متجر جديد</title>
+</head>
+<body>
+
+    <header>
+        <h1>إنشاء متجر جديد</h1>
+        <a href="index.html">← الرجوع للرئيسية</a>
+        <hr>
+    </header>
+
+    <main>
+        <form action="dashboard.html" method="get">
+            
+            <fieldset>
+                <legend>1- معلومات المتجر</legend>
+                <label>اسم المتجر: <input type="text" name="store_name" required placeholder="مثال: متجر الأناقة"></label><br><br>
+                <label>رابط المتجر: <input type="text" name="store_link" required> .storak.com</label><br><br>
+                <label>نوع النشاط:
+                    <select name="category" required>
+                        <option value="">-- اختر النشاط --</option>
+                        <option value="clothes">ملابس وأزياء</option>
+                        <option value="electronics">إلكترونيات</option>
+                        <option value="food">مطاعم وحلويات</option>
+                        <option value="beauty">مستحضرات تجميل</option>
+                        <option value="other">أخرى</option>
+                    </select>
+                </label><br><br>
+                <label>وصف المتجر:<br>
+                    <textarea name="description" rows="4" cols="40" placeholder="اكتب نبذة عن متجرك..."></textarea>
+                </label>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>2- معلومات صاحب المتجر</legend>
+                <label>الاسم الكامل: <input type="text" name="owner" required></label><br><br>
+                <label>البريد الإلكتروني: <input type="email" name="email" required></label><br><br>
+                <label>رقم الهاتف: <input type="tel" name="phone" required></label><br><br>
+                <label>كلمة المرور: <input type="password" name="password" required></label><br><br>
+                <label>تأكيد كلمة المرور: <input type="password" name="confirm_password" required></label>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>3- اختر قالب المتجر</legend>
+                <input type="radio" name="template" value="classic" checked> القالب الكلاسيكي<br>
+                <input type="radio" name="template" value="modern"> القالب العصري<br>
+                <input type="radio" name="template" value="simple"> القالب البسيط<br><br>
+                <a href="templates.html" target="_blank">معاينة القوالب</a>
+            </fieldset>
+
+            <br>
+            <input type="checkbox" name="terms" required> أوافق على <a href="#">الشروط والأحكام</a><br><br>
+            
+            <button type="submit">إنشاء متجري الآن</button>
+            <button type="reset">مسح البيانات</button>
+
+        </form>
+    </main>
+
+</body>
+</html
