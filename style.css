@@ -1,0 +1,46 @@
+*{
+margin:1;
+padding:1;
+box-sizing:border-box;
+fontfamily:'Segoe UI',Tahoma,sans-serif;
+
+}
+
+body{
+background-color:#FFF8F0;
+line-height:1.6;
+direction:rtl;
+
+}
+
+header{
+background-color:#CC88FF;
+padding:15px 8%;
+display:flex;
+align-items:center;
+}
+
+header h1{
+color:#4a00e0;
+font-size:24px;
+}
+
+a{
+text-decoration:none;
+color:brown;
+
+}
+
+a:hover{
+color:#4a00e0;
+}
+main{
+padding:20px 8%;
+}
+botton{
+width:100%;
+padding:12px;
+}
+botton:hover{
+opacity:0.9;
+}
