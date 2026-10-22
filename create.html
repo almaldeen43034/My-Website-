@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إنشاء متجر جديد</title>
+<link rel="stylesheet"href="style.css"
 </head>
 <body>
 
@@ -17,11 +17,11 @@
     <main>
         <form action="dashboard.html" method="get">
             
-            <fieldset>
+        
                 <legend>1- معلومات المتجر</legend>
                 <label>اسم المتجر: <input type="text" name="store_name" required placeholder="مثال: متجر الأناقة"></label><br><br>
                 <label>رابط المتجر: <input type="text" name="store_link" required> .storak.com</label><br><br>
-                <label>نوع النشاط:
+                <label>نوع النشاط: </label>
                     <select name="category" required>
                         <option value="">-- اختر النشاط --</option>
                         <option value="clothes">ملابس وأزياء</option>
@@ -30,10 +30,11 @@
                         <option value="beauty">مستحضرات تجميل</option>
                         <option value="other">أخرى</option>
                     </select>
-                </label><br><br>
-                <label>وصف المتجر:<br>
-                    <textarea name="description" rows="4" cols="40" placeholder="اكتب نبذة عن متجرك..."></textarea>
-                </label>
+               <br><br>
+    <fieldset>
+                <label>وصف المتجر:</label><br>
+      <textarea name="description"  rows="4" cols="40"></textarea>
+                
             </fieldset>
 
             <br>
@@ -67,4 +68,4 @@
     </main>
 
 </body>
-</html
+</html>
