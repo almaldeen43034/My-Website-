@@ -2,59 +2,140 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>تواصل معنا - صمم موقعك</title>
-  <link rel="stylesheet"href="styel.css"/>
-</head> 
+<meta charset="UTF-8">
+<title>تواصل معنا - صمم موقعك</title>
+<link rel="stylesheet" href="styel.css"/>
+<style>
+/* تنسيق النافذة المنبثقة */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+.popup-box h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+.popup-box button {
+    background: #000;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+</style>
+</head>
 <body>
-    <header>
-        <h1>صمم موقعك</h1>
-        <nav>
-            <a href="index.html">الرئيسية</a> |
-            <a href="templates.html">القوالب</a> |
-            <a href="pricing.html">الأسعار</a> |
-            <a href="contact.html">تواصل معنا</a> |
-            <a href="login.html">دخول</a>
-        </nav>
-        <hr>
-    </header>
 
-    <main>
-        <h2>تواصل معنا</h2>
-        <p>عندك سؤال؟ فريقنا جاهز يرد عليك في أقل من 24 ساعة</p>
+<header>
+<h1>صمم موقعك</h1>
+<nav>
+<a href="index.html">الرئيسية</a> |
+<a href="templates.html">القوالب</a> |
+<a href="pricing.html">الأسعار</a> |
+<a href="contact.html">تواصل معنا</a> |
+<a href="login.html">دخول</a>
+</nav>
+<hr>
+</header>
 
-        <form action="index.html" method="get">
-            <label>الاسم الكامل:</label><br>
-            <input type="text" name="fullname" placeholder="اكتب اسمك" required><br><br>
+<main>
+<h2>تواصل معنا</h2>
+<p>عندك سؤال؟ فريقنا جاهز يرد عليك في أقل من 24 ساعة</p>
 
-            <label>البريد الإلكتروني:</label><br>
-            <input type="email" name="email" placeholder="example@email.com" required><br><br>
+<form id="contactForm">
+<label>الاسم الكامل:</label><br>
+<input type="text" name="fullname" placeholder="اكتب اسمك" required><br><br>
 
-            <label>موضوع الرسالة:</label><br>
-            <select name="subject" required>
-                <option value="">-- اختر الموضوع --</option>
-                <option value="support">دعم فني</option>
-                <option value="sales">استفسار عن الأسعار</option>
-                <option value="templates">مشكلة في القوالب</option>
-                <option value="other">أخرى</option>
-            </select><br><br>
+<label>البريد الإلكتروني:</label><br>
+<input type="email" name="email" placeholder="example@email.com" required><br><br>
 
-            <label>الرسالة:</label><br>
-            <textarea name="message" rows="5" cols="30" placeholder="اكتب رسالتك هنا..." required></textarea><br><br>
+<label>موضوع الرسالة:</label><br>
+<select name="subject" required>
+<option value="">-- اختر الموضوع --</option>
+<option value="support">دعم فني</option>
+<option value="sales">استفسار عن الأسعار</option>
+<option value="templates">مشكلة في القوالب</option>
+<option value="other">أخرى</option>
+</select><br><br>
 
-            <button type="submit">إرسال الرسالة</button>
-        </form>
+<label>الرسالة:</label><br>
+<textarea name="message" rows="5" cols="30" placeholder="اكتب رسالتك هنا..." required></textarea><br><br>
 
-        <hr>
-        <h3>معلومات التواصل المباشر</h3>
-        <p>📧 البريد: almadeen43034@gmail.com</p>
-        <p> 📞+249113462658 الهاتف</p>
-        <p>📍 العنوان: مدني - السودان</p>
-    </main>
+<button type="submit">إرسال الرسالة</button>
+</form>
 
-    <footer>
-        <hr>
-        <p>جميع الحقوق محفوظة © 2026 صمم موقعك</p>
-    </footer>
+<hr>
+<h3>معلومات التواصل المباشر</h3>
+<p>📧 البريد: almadeen43034@gmail.com</p>
+<p>📞 الهاتف: +249113462658</p>
+<p>📍 العنوان: مدني - السودان</p>
+</main>
+
+<!-- النافذة المنبثقة -->
+<div id="popup" class="popup-overlay">
+    <div class="popup-box">
+        <h3>✅ شكرا لتواصلك</h3>
+        <p>سيصلك الرد في أقل من 24 ساعة</p>
+        <button onclick="closePopup()">حسناً</button>
+    </div>
+</div>
+
+<footer>
+<hr>
+<p>جميع الحقوق محفوظة © 2026 صمم موقعك</p>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault(); // منع انتقال الصفحة
+
+    // هنا ممكن تحفظ الرسالة في localStorage لو عايز
+    let name = this.fullname.value;
+    let email = this.email.value;
+    let subject = this.subject.value;
+    let message = this.message.value;
+
+    let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+    messages.push({name, email, subject, message, date: new Date().toLocaleString()});
+    localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+    // إظهار النافذة
+    document.getElementById('popup').style.display = 'flex';
+
+    // تصفير الفورم
+    this.reset();
+});
+
+function closePopup(){
+    document.getElementById('popup').style.display = 'none';
+}
+
+// قفل النافذة لو ضغطت برا الصندوق
+document.getElementById('popup').addEventListener('click', function(e){
+    if(e.target === this){
+        this.style.display = 'none';
+    }
+});
+</script>
+
 </body>
 </html>
